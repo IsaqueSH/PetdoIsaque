@@ -1,0 +1,41 @@
+{% extends 'base.html'%}
+{%block content%}
+
+<div class="card">
+    <div class="card-header">
+        <strong>
+            {{ produto.nome_produto }} <br>
+
+        </strong>
+    </div>
+    <div class="card-body">
+
+        <p class="card-text">
+            <strong> Marca do Produto: </strong>{{ produto.marca_produto }}
+        </p>
+
+        <p class="card-text">
+            <strong> Tipo do Produto: </strong>{{ produto.tipo_produto }}
+        </p>
+
+        <p class="card-text">
+            <strong>Indicados para os pets: </strong>{{ produto.pet_produto }}
+        </p>
+        <p class="card-text">
+            <strong>Preço do Produto: </strong>{{ produto.preco_produto }}
+        </p>
+        <p class="card-text">
+            <strong>Apreseentação: </strong>{{ produto.apresentacao_produto }}
+        </p>
+        </p>
+    </div>
+</div>
+
+<br /><br />
+<a href="{% url 'home' %}" class="btn btn-secondary">Voltar</a>
+<a href="{% url 'deletar_produto' produto.id %}" class="btn btn-danger">Deletar</a>
+<a href="{% url 'editar_produto' produto.id %}" class="btn btn-info">Editar</a>
+
+
+
+{% endblock %}
